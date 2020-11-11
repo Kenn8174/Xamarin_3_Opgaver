@@ -13,7 +13,10 @@ namespace Xamarin_3_Opgaver
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            var container = TinyIoCContainer.Current;
+            container.Register<MockDataStore>();
+
+            //DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
